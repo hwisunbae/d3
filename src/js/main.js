@@ -81,6 +81,7 @@ function update(data) {
   let xAxisCall= d3.axisBottom(x);
 
   xAxisGroup
+    .transition(t)
     .call(xAxisCall)
     .selectAll("text")
     .attr("y", "10")
@@ -92,33 +93,34 @@ function update(data) {
     .tickFormat(d => d+'m');
 
   yAxisGroup
+    .transition(t)
     .call(yAxisCall)
 
 
-  let rects = g.selectAll("rect")
+  let rects = g.selectAll("circle")
     .data(data, d => d.month)
 
   rects
     .exit()
     .attr('fill','red')
     .transition(t)
-    .attr('y', 0)
+    .attr('cy', 0)
     .attr('height', 0)
     .remove()
 
   rects
     .enter()
-    .append("rect")
-    .attr("y", d => y(d[value]))
-    .attr("x", (d) => x(d.month))
-    .attr("width", x.bandwidth)
-    .attr("height", d => height - y(d[value]))
+    .append("circle")
+    .attr("cy", d => y(d[value]))
+    .attr("cx", (d) => x(d.month) + x.bandwidth() /2)
+    .attr("r", 5)
+    // .attr("height", d => height - y(d[value]))
     .attr("fill", "lightblue")
       .merge(rects)
       .transition(t)
-      .attr("y", d => y(d[value]))
-      .attr("x", (d) => x(d.month))
-      .attr("width", x.bandwidth)
-      .attr("height", d => height - y(d[value]))
+      .attr("cy", d => y(d[value]))
+      .attr("cx", (d) => x(d.month)+ x.bandwidth() /2)
+      // .attr("width", x.bandwidth)
+      // .attr("height", d => height - y(d[value]))
 }
 
