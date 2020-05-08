@@ -8,6 +8,8 @@ let margin = {
 let width = 600 - margin.left - margin.right;
 let height = 400 - margin.top - margin.bottom;
 
+let flag = true;
+let t = d3.transition().duration(3000)
 
 let svg = d3.select("#chart-area")
   .append("svg")
@@ -19,7 +21,7 @@ let g = svg.append("g")
   +margin.top + ")");
 
 //X Label
-g.append('text')
+let xLabel = g.append('text')
   .attr('class', 'x axis-label')
   .attr('x', width/2)
   .attr('y', height + 100)
@@ -27,15 +29,30 @@ g.append('text')
   .attr('text-anchor', 'middle')
   .text('Month')
 
-//Y Label
-g.append('text')
+let xAxisGroup = g.append("g")
+  .attr("class","x axis")
+  .attr("transform", "translate(0,"+height+")")
+
+let yAxisGroup = g.append("g")
+  .attr("class","y-axis")
+
+let yLabel = g.append('text')
   .attr('class', 'y axis-label')
   .attr('x', -(height/2))
   .attr('y', -60)
   .attr('font-size', '20px')
   .attr('text-anchor', 'middle')
   .attr('transform','rotate(-90)')
-  .text('Month')
+  .text('Revenue')
+
+let x = d3.scaleBand()
+  .range([0,width])
+  .paddingInner(0.3)
+  .paddingOuter(0.3);
+
+
+let y = d3.scaleLinear()
+  .range([height, 0]);
 
 d3.json("data/profits.json").then(data => {
   // console.log(data)
@@ -43,24 +60,27 @@ d3.json("data/profits.json").then(data => {
     d.revenue = +d.revenue;
     d.profit = +d.profit;
   });
-  let dataArr = [];
 
+  d3.interval(() => {
+    let newData = flag ? data : data.slice(1);
+    update(newData);
+    flag = !flag;
+  }, 2000)
 
-  let x = d3.scaleBand()
-    .domain(data.map(d => d.month))
-    .range([0,width])
-    .paddingInner(0.3)
-    .paddingOuter(0.3);
+})
 
+function update(data) {
 
-  let y = d3.scaleLinear()
-    .domain([0,d3.max(data, d=> d.revenue)])
-    .range([height, 0]);
+  let value = flag ? "revenue" : "profit";
+  let label = flag? "Revenue" : "Profit";
+  yLabel.text(label)
+
+  x  .domain(data.map(d => d.month))
+  y  .domain([0,d3.max(data, d=> d[value])])
 
   let xAxisCall= d3.axisBottom(x);
-  g.append("g")
-    .attr("class","x axis")
-    .attr("transform", "translate(0,"+height+")")
+
+  xAxisGroup
     .call(xAxisCall)
     .selectAll("text")
     .attr("y", "10")
@@ -71,20 +91,34 @@ d3.json("data/profits.json").then(data => {
   let yAxisCall = d3.axisLeft(y)
     .tickFormat(d => d+'m');
 
-  g.append("g")
-    .attr("class","y-axis")
+  yAxisGroup
     .call(yAxisCall)
 
 
   let rects = g.selectAll("rect")
-    .data(data)
+    .data(data, d => d.month)
+
+  rects
+    .exit()
+    .attr('fill','red')
+    .transition(t)
+    .attr('y', 0)
+    .attr('height', 0)
+    .remove()
+
+  rects
     .enter()
     .append("rect")
-    .attr("y", d => y(d.revenue))
+    .attr("y", d => y(d[value]))
     .attr("x", (d) => x(d.month))
     .attr("width", x.bandwidth)
-    .attr("height", d => height - y(d.revenue))
-    .attr("fill", "grey")
-})
-
+    .attr("height", d => height - y(d[value]))
+    .attr("fill", "lightblue")
+      .merge(rects)
+      .transition(t)
+      .attr("y", d => y(d[value]))
+      .attr("x", (d) => x(d.month))
+      .attr("width", x.bandwidth)
+      .attr("height", d => height - y(d[value]))
+}
 
