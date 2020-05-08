@@ -13,7 +13,16 @@ let svg = d3.select("#chart-area")
   .attr('width', width + margin.right + margin.left)
   .attr('height', height + margin.top + margin.bottom);
 
+
+
 d3.json('data/continents.json').then(data => {
   window.data = data;
+
+  let circle = svg.selectAll('circle')
+    .data(data)
+
+  circle.enter()
+
 }).catch(err => console.log(err))
+
 
