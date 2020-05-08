@@ -25,7 +25,7 @@ g.append('text')
   .attr('y', height + 100)
   .attr('font-size', '20px')
   .attr('text-anchor', 'middle')
-  .text('the world\'s tallest buildings')
+  .text('Month')
 
 //Y Label
 g.append('text')
@@ -35,26 +35,26 @@ g.append('text')
   .attr('font-size', '20px')
   .attr('text-anchor', 'middle')
   .attr('transform','rotate(-90)')
-  .text('Height (m)')
+  .text('Month')
 
-d3.json("data/buildings.json").then(data => {
+d3.json("data/profits.json").then(data => {
   // console.log(data)
   data.forEach(d => {
-    d.height = +d.height;
+    d.revenue = +d.revenue;
+    d.profit = +d.profit;
   });
   let dataArr = [];
 
-  data.forEach(d => dataArr.push(d.name));
-  console.log(dataArr)
+
   let x = d3.scaleBand()
-    .domain(data.map(d => d.name))
+    .domain(data.map(d => d.month))
     .range([0,width])
     .paddingInner(0.3)
     .paddingOuter(0.3);
 
 
   let y = d3.scaleLinear()
-    .domain([0,d3.max(data, d=> d.height)])
+    .domain([0,d3.max(data, d=> d.revenue)])
     .range([height, 0]);
 
   let xAxisCall= d3.axisBottom(x);
@@ -80,10 +80,10 @@ d3.json("data/buildings.json").then(data => {
     .data(data)
     .enter()
     .append("rect")
-    .attr("y", d => y(d.height))
-    .attr("x", (d) => x(d.name))
+    .attr("y", d => y(d.revenue))
+    .attr("x", (d) => x(d.month))
     .attr("width", x.bandwidth)
-    .attr("height", d => height - y(d.height))
+    .attr("height", d => height - y(d.revenue))
     .attr("fill", "grey")
 })
 
