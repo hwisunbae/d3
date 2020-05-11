@@ -21,6 +21,20 @@ let g = svg
 
 let continentColor = d3.scaleOrdinal(d3.schemePastel1)
 
+// tooltip
+let tip = d3.tip()
+  .attr('class', 'd3-tip')
+  .html(d => {
+    let text = '<strong>Country: </strong> <span style="color:red">'+ d.country+'</span> <br>'
+      text += '<strong>Continent: </strong> <span style="color:red;text-transform: capitalize">'+ d.continent+'</span> <br>'
+      text += '<strong>Life Expectancy: </strong> <span style="color:red">'+ d3.format('.2f')(d.life_exp)+'</span> <br>'
+      text += '<strong>GDP Per Capita: </strong> <span style="color:red">'+ d3.format('$,.0f')(d.income)+'</span> <br>'
+      text += '<strong>Population: </strong> <span style="color:red">'+ d3.format(',.0f')(d.population)+'</span> <br>'
+    return text
+  })
+g.call(tip)
+
+// X and Y
 let x = d3.scaleLog()
   .domain([142, 150000])
   .range([0, width])
@@ -133,9 +147,8 @@ function update (data) {
     .append('circle')
     .attr('fill', d => continentColor(d.continent))
     .attr('continent', d => d.continent)
-    .attr('cx', (d, i) => x(d.income))  // index no needed
-    .attr('cy', (d, i) => y(d.life_exp))
-    .attr('r', (d, i) => Math.sqrt(area(d.population)) )
+    .on('mouseover', tip.show)
+    .on('mouseout', tip.hide)
       .merge(circle)
       .attr('cx', (d, i) => x(d.income))  // index no needed
       .attr('cy', (d, i) => y(d.life_exp))
