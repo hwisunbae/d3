@@ -39,6 +39,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e65265b1-ed67-4a17-abbf-03c75254f388" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/main2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/main2.js" afterDir="false" />
     </list>
@@ -97,7 +99,7 @@
       <option name="presentableId" value="Default" />
       <updated>1588842670184</updated>
       <workItem from="1588842671463" duration="7514000" />
-      <workItem from="1589153663031" duration="13963000" />
+      <workItem from="1589153663031" duration="24090000" />
     </task>
     <servers />
   </component>
@@ -133,5 +135,9 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1650" y="44" width="787" height="1379" key="dock-window-1/0.0.2560.1400/2560.0.2560.1400@2560.0.2560.1400" timestamp="1589170511725" />
+    <state x="3537" y="362" width="672" height="678" key="search.everywhere.popup" timestamp="1589178404326">
+      <screen x="2560" y="0" width="2560" height="1400" />
+    </state>
+    <state x="3537" y="362" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400/2560.0.2560.1400@2560.0.2560.1400" timestamp="1589178404326" />
   </component>
 </project>
