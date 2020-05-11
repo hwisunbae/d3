@@ -77,6 +77,7 @@
     "README.md"
   ],
   "dependencies": {
+    "bootstrap": "^4.4.1",
     "d3": "^5.16.0",
     "d3-tip": "^0.9.1"
   }

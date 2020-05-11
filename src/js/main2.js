@@ -8,7 +8,7 @@ const margin = {
 const width = 500 - margin.right - margin.left,
   height = 500 - margin.top - margin.bottom;
 
-let time = 0;
+let time = 0, interval, formattedData;
 
 let svg = d3.select("#chart-area")
 .append('svg')
@@ -109,7 +109,7 @@ continents.forEach((continent, i) => {
 d3.json('data/continents.json').then(data => {
 
   //Clean Data
-  const formattedData = data.map(datum => {
+  formattedData = data.map(datum => {
     return datum['countries'].filter(country => {
       return (country.income && country.life_exp)
     }).map(country => {
@@ -122,19 +122,35 @@ d3.json('data/continents.json').then(data => {
   window.formattedData = formattedData;
   window.data = data;
 
-
-  d3.interval(() => {
-   time < 214 ? time++ : time;
-   update(formattedData[time])
-
-  }, 100)
-
   update(formattedData[0])
 
 }).catch(err => console.log(err))
 
-function update (data) {
+$('#play-button')
+  .on('click', button => {
+    let $this = $(button.currentTarget);
 
+    if( $this.text() == 'Play') {
+      $this.text('Pause');
+      interval = setInterval(step, 100)
+    } else {
+      $this.text('Play');
+      clearInterval(interval);
+    }
+  })
+
+$('#reset-button')
+  .on('click', function() {
+    time = 0;
+    update(formattedData[time]);
+  })
+
+function step() {
+  time < 214 ? time++ : time;
+  update(formattedData[time])
+}
+
+function update (data) {
   let t = d3.transition().duration(3000);
 
   let circle = g.selectAll('circle')
