@@ -9,6 +9,7 @@
 
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
+  <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="//rawgithub.com/Caged/d3-tip/master/examples/example-styles.css">
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
@@ -19,41 +20,13 @@
 </head>
 
 <body>
-  <!--[if IE]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->r
-  <svg width="400" height="300">
-    <rect x="0" y="0" width="50" height="50" fill="green"></rect>
-    <circle cx="90" cy="25" r="4" fill="red"></circle>
-  </svg>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <button type="button" id="play-button" class="btn btn-primary">Play</button>
-        <button id="reset-button" class="btn btn-primary">Reset</button>
-        <div id="slider-div">
-          <label>Year: <span id="year">1800</span></label>
-          <div id="date-slider"></div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <select id="continent-select" class="form-control">
-          <option value="all" selected>All</option>
-          <option value="europe">Europe</option>
-          <option value="asia">Asia</option>
-          <option value="americas">Americas</option>
-          <option value="africa">Africa</option>
-        </select>
-      </div>
-    </div>
-  </div>
+  <svg width="960" height="600"></svg>
+  <form>
+    <label><input type="radio" name="mode" value="sumBySize" checked> Size</label>
+    <label><input type="radio" name="mode" value="sumByCount"> Count</label>
+  </form>
 
-  <div class="container">
-    <div class="row">
-      <div id="chart-area"></div>
-    </div>
-  </div>
 
   <!-- Add your site or application content here -->
   <p>Hello world! This is HTML5 Boilerplate.</p>
@@ -71,8 +44,7 @@
     integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
     crossorigin="anonymous"></script>
 
-<!--  <script src="js/main.js"></script>-->
-  <script src="js/continent.js"></script>
+  <script src="js/tree.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
