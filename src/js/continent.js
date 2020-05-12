@@ -19,7 +19,7 @@ let g = svg
   .append('g')
   .attr('transform', 'translate (' + margin.left + ', ' + margin.top + ')')
 
-let continentColor = d3.scaleOrdinal(d3.schemePastel1)
+let continentColor = d3.scaleOrdinal(d3.schemeTableau10)
 
 // tooltip
 let tip = d3.tip()
@@ -106,26 +106,7 @@ continents.forEach((continent, i) => {
     .text(continent)
 })
 
-d3.json('data/continents.json').then(data => {
-
-  //Clean Data
-  formattedData = data.map(datum => {
-    return datum['countries'].filter(country => {
-      return (country.income && country.life_exp)
-    }).map(country => {
-      country.income = +country.income;
-      country.life_exp = +country.life_exp;
-      return country;
-    })
-  })
-
-  window.formattedData = formattedData;
-  window.data = data;
-
-  update(formattedData[0])
-
-}).catch(err => console.log(err))
-
+// Button and select option
 $('#play-button')
   .on('click', button => {
     let $this = $(button.currentTarget);
@@ -150,11 +131,49 @@ function step() {
   update(formattedData[time])
 }
 
+$('#continent-select').on('change', function(){
+  update(formattedData[time])
+})
+
+// TODO: Slider needs to be added
+
+
+
+
+d3.json('data/continents.json').then(data => {
+
+  //Clean Data
+  formattedData = data.map(datum => {
+    return datum['countries'].filter(country => {
+      return (country.income && country.life_exp)
+    }).map(country => {
+      country.income = +country.income;
+      country.life_exp = +country.life_exp;
+      return country;
+    })
+  })
+
+  window.formattedData = formattedData;
+  window.data = data;
+
+  update(formattedData[0])
+
+}).catch(err => console.log(err))
+
 function update (data) {
   let t = d3.transition().duration(3000);
 
+  let continent = $('#continent-select').val()
+
+  let datum = data.filter(d => {
+    if (continent == 'all') { return true }
+    else {
+      return d.continent == continent
+    }
+  })
+
   let circle = g.selectAll('circle')
-    .data(data, d => d.country)
+    .data(datum, d => d.country)
 
   circle.exit()
     .remove()

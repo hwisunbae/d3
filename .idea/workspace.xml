@@ -39,10 +39,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e65265b1-ed67-4a17-abbf-03c75254f388" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/main2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/main2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/main2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/continent.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +70,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -84,6 +83,10 @@
     <property name="settings.editor.selected.configurable" value="project.propDebugger" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\USER\WebstormProjects\d3\src" />
+      <recent name="C:\Users\USER\WebstormProjects\d3\src\data" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/data" />
     </key>
@@ -99,7 +102,8 @@
       <option name="presentableId" value="Default" />
       <updated>1588842670184</updated>
       <workItem from="1588842671463" duration="7514000" />
-      <workItem from="1589153663031" duration="24090000" />
+      <workItem from="1589153663031" duration="24578000" />
+      <workItem from="1589239998761" duration="22056000" />
     </task>
     <servers />
   </component>
@@ -135,6 +139,14 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1650" y="44" width="787" height="1379" key="dock-window-1/0.0.2560.1400/2560.0.2560.1400@2560.0.2560.1400" timestamp="1589170511725" />
+    <state x="3449" y="477" width="584" height="532" key="find.popup" timestamp="1589263341162">
+      <screen x="2560" y="0" width="2560" height="1400" />
+    </state>
+    <state x="3449" y="477" width="584" height="532" key="find.popup/0.0.2560.1400/2560.0.2560.1400@2560.0.2560.1400" timestamp="1589263341162" />
+    <state x="3397" y="354" key="run.anything.popup" timestamp="1589242606700">
+      <screen x="2560" y="0" width="2560" height="1400" />
+    </state>
+    <state x="3397" y="354" key="run.anything.popup/0.0.2560.1400/2560.0.2560.1400@2560.0.2560.1400" timestamp="1589242606700" />
     <state x="3537" y="362" width="672" height="678" key="search.everywhere.popup" timestamp="1589178404326">
       <screen x="2560" y="0" width="2560" height="1400" />
     </state>
