@@ -1,30 +1,3 @@
-// const margin = {
-//     left: 40,
-//     right: 20,
-//     bottom :50,
-//     top: 40
-//   }, height = 500 - margin.top - margin.bottom,
-//   width = 500 - margin.right - margin.left
-//
-// let svg = d3.select('#chart-area')
-//   .append('svg')
-//   .attr('width', width + margin.right + margin.left)
-//   .attr('height', height + margin.top + margin.bottom)
-//
-// let tree = d3.tree()
-//   .size([height, width -160])
-//
-// // let hierarchy = d3.hierarchy()
-// //   .parentId((d) => d.id.substring(0, d.id.lastIndexOf('.')))
-//
-// d3.json('data/tree.json').then(data => {
-//   console.log(data)
-// }).catch(err => {
-//   console.log(err)
-// })
-
-
-
 let svg = d3.select("svg"),
   width = +svg.attr("width"),
   height = +svg.attr("height");
@@ -41,15 +14,14 @@ let treemap = d3.treemap()
 
 d3.json('data/tree.json').then(data => {
 
-  let root = d3.hierarchy(data)
-    .eachBefore((d) => { d.data.id = (d.parent ? d.parent.data.id + "." : "") + d.data.name; })
-    .sum(sumBySize)
-    .sort(function(a, b) { return b.height - a.height || b.value - a.value; });
+  let root = d3.hierarchy(data) // Node
+    .sum(d => d.value)
+    .sort(function(a, b) { return b.value - a.value; });
+
+  root = treemap(root);
 
   window.data = data;
   window.root = root;
-
-  treemap(root);
 
   let cell = svg.selectAll("g")
     .data(root.leaves())

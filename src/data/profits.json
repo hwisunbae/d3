@@ -32,5 +32,300 @@
     "month": "July",
     "profit" : "2874",
     "revenue" : "3333"
+  },
+  {
+    "month": "August",
+    "profit" : "2874",
+    "revenue" : "2231"
+  },
+  {
+    "month": "September",
+    "profit" : "2874",
+    "revenue" : "231"
+  },
+  {
+    "month": "November",
+    "profit" : "2874",
+    "revenue" : "3333"
+  },
+  {
+    "month": "December",
+    "profit" : "2874",
+    "revenue" : "3333"
+  },
+  {
+    "month": "January1",
+    "profit" : "8342",
+    "revenue" : "13432"
+  },
+  {
+    "month": "February1",
+    "profit" : "1111",
+    "revenue" : "5000"
+  },
+  {
+    "month": "March1",
+    "profit" : "2221",
+    "revenue" : "1442"
+  },
+  {
+    "month": "April1",
+    "profit" : "3222",
+    "revenue" : "2211"
+  },
+  {
+    "month": "May1",
+    "profit" : "2345",
+    "revenue" : "1234"
+  },
+  {
+    "month": "June1",
+    "profit" : "2648",
+    "revenue" : "2100"
+  },
+  {
+    "month": "July1",
+    "profit" : "2874",
+    "revenue" : "3333"
+  },
+  {
+    "month": "August1",
+    "profit" : "2874",
+    "revenue" : "2231"
+  },
+  {
+    "month": "September1",
+    "profit" : "2874",
+    "revenue" : "231"
+  },
+  {
+    "month": "November1",
+    "profit" : "2874",
+    "revenue" : "3333"
+  },
+  {
+    "month": "December1",
+    "profit" : "2874",
+    "revenue" : "3333"
+  },
+  {
+  "month": "January2",
+  "profit" : "8342",
+  "revenue" : "13432"
+},
+  {
+    "month": "February2",
+    "profit" : "1111",
+    "revenue" : "5000"
+  },
+  {
+    "month": "March2",
+    "profit" : "2221",
+    "revenue" : "1442"
+  },
+  {
+    "month": "April2",
+    "profit" : "3222",
+    "revenue" : "2211"
+  },
+  {
+    "month": "May2",
+    "profit" : "2345",
+    "revenue" : "1234"
+  },
+  {
+    "month": "June2",
+    "profit" : "2648",
+    "revenue" : "2100"
+  },
+  {
+    "month": "July2",
+    "profit" : "2874",
+    "revenue" : "3333"
+  },
+  {
+    "month": "August2",
+    "profit" : "2874",
+    "revenue" : "2231"
+  },
+  {
+    "month": "September2",
+    "profit" : "2874",
+    "revenue" : "231"
+  },
+  {
+    "month": "November2",
+    "profit" : "2874",
+    "revenue" : "3333"
+  },
+  {
+    "month": "December2",
+    "profit" : "2874",
+    "revenue" : "3333"
+  },
+  {
+    "month": "January3",
+    "profit" : "8342",
+    "revenue" : "13432"
+  },
+  {
+    "month": "February3",
+    "profit" : "1111",
+    "revenue" : "5000"
+  },
+  {
+    "month": "March3",
+    "profit" : "2221",
+    "revenue" : "1442"
+  },
+  {
+    "month": "April3",
+    "profit" : "3222",
+    "revenue" : "2211"
+  },
+  {
+    "month": "May3",
+    "profit" : "2345",
+    "revenue" : "1234"
+  },
+  {
+    "month": "June3",
+    "profit" : "2648",
+    "revenue" : "2100"
+  },
+  {
+    "month": "July3",
+    "profit" : "2874",
+    "revenue" : "3333"
+  },
+  {
+    "month": "August3",
+    "profit" : "2874",
+    "revenue" : "2231"
+  },
+  {
+    "month": "September3",
+    "profit" : "2874",
+    "revenue" : "231"
+  },
+  {
+    "month": "November3",
+    "profit" : "2874",
+    "revenue" : "3333"
+  },
+  {
+    "month": "December3",
+    "profit" : "2874",
+    "revenue" : "3333"
+  },
+  {
+    "month": "January4",
+    "profit" : "8342",
+    "revenue" : "13432"
+  },
+  {
+    "month": "February4",
+    "profit" : "1111",
+    "revenue" : "5000"
+  },
+  {
+    "month": "March4",
+    "profit" : "2221",
+    "revenue" : "1442"
+  },
+  {
+    "month": "April4",
+    "profit" : "3222",
+    "revenue" : "2211"
+  },
+  {
+    "month": "May4",
+    "profit" : "2345",
+    "revenue" : "1234"
+  },
+  {
+    "month": "June4",
+    "profit" : "2648",
+    "revenue" : "2100"
+  },
+  {
+    "month": "July4",
+    "profit" : "2874",
+    "revenue" : "3333"
+  },
+  {
+    "month": "August4",
+    "profit" : "2874",
+    "revenue" : "2231"
+  },
+  {
+    "month": "September4",
+    "profit" : "2874",
+    "revenue" : "231"
+  },
+  {
+    "month": "November4",
+    "profit" : "2874",
+    "revenue" : "3333"
+  },
+  {
+    "month": "December4",
+    "profit" : "2874",
+    "revenue" : "3333"
+  },
+  {
+    "month": "January5",
+    "profit" : "8342",
+    "revenue" : "13432"
+  },
+  {
+    "month": "February5",
+    "profit" : "1111",
+    "revenue" : "5000"
+  },
+  {
+    "month": "March5",
+    "profit" : "2221",
+    "revenue" : "1442"
+  },
+  {
+    "month": "April5",
+    "profit" : "3222",
+    "revenue" : "2211"
+  },
+  {
+    "month": "May5",
+    "profit" : "2345",
+    "revenue" : "1234"
+  },
+  {
+    "month": "June5",
+    "profit" : "2648",
+    "revenue" : "2100"
+  },
+  {
+    "month": "July5",
+    "profit" : "2874",
+    "revenue" : "3333"
+  },
+  {
+    "month": "August5",
+    "profit" : "2874",
+    "revenue" : "2231"
+  },
+  {
+    "month": "September5",
+    "profit" : "2874",
+    "revenue" : "231"
+  },
+  {
+    "month": "November5",
+    "profit" : "2874",
+    "revenue" : "3333"
+  },
+  {
+    "month": "December5",
+    "profit" : "2874",
+    "revenue" : "3333"
   }
 ]
