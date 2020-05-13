@@ -39,8 +39,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e65265b1-ed67-4a17-abbf-03c75254f388" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/profits.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/profits.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/main2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/continent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/tree.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/tree.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tree-map.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree-map.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +72,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/js" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -80,15 +82,16 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
+    <property name="settings.editor.selected.configurable" value="liveEdit" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\USER\WebstormProjects\d3\src" />
-      <recent name="C:\Users\USER\WebstormProjects\d3\src\data" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/data" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\USER\WebstormProjects\d3\src\js" />
+      <recent name="C:\Users\USER\WebstormProjects\d3\src" />
+      <recent name="C:\Users\USER\WebstormProjects\d3\src\data" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -103,7 +106,8 @@
       <updated>1588842670184</updated>
       <workItem from="1588842671463" duration="7514000" />
       <workItem from="1589153663031" duration="24578000" />
-      <workItem from="1589239998761" duration="22056000" />
+      <workItem from="1589239998761" duration="22396000" />
+      <workItem from="1589327353398" duration="14616000" />
     </task>
     <servers />
   </component>
@@ -135,21 +139,29 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1650" y="44" width="787" height="1379" key="dock-window-1" timestamp="1589170511725">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="1650" y="44" width="787" height="1379" key="dock-window-1/0.0.2560.1400/2560.0.2560.1400@2560.0.2560.1400" timestamp="1589170511725" />
-    <state x="3449" y="477" width="584" height="532" key="find.popup" timestamp="1589263341162">
+    <state x="3365" y="368" key="#Plugins" timestamp="1589345202007">
       <screen x="2560" y="0" width="2560" height="1400" />
     </state>
-    <state x="3449" y="477" width="584" height="532" key="find.popup/0.0.2560.1400/2560.0.2560.1400@2560.0.2560.1400" timestamp="1589263341162" />
+    <state x="3365" y="368" key="#Plugins/0.0.2560.1400/2560.0.2560.1400@2560.0.2560.1400" timestamp="1589345202007" />
+    <state x="3274" y="371" key="SettingsEditor" timestamp="1589345210357">
+      <screen x="2560" y="0" width="2560" height="1400" />
+    </state>
+    <state x="3274" y="371" key="SettingsEditor/0.0.2560.1400/2560.0.2560.1400@2560.0.2560.1400" timestamp="1589345210357" />
+    <state x="1024" y="0" width="1553" height="1407" key="dock-window-1" timestamp="1589356237765">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1024" y="0" width="1553" height="1407" key="dock-window-1/0.0.2560.1400/2560.0.2560.1400@2560.0.2560.1400" timestamp="1589356237765" />
+    <state x="3449" y="477" width="584" height="532" key="find.popup" timestamp="1589345197188">
+      <screen x="2560" y="0" width="2560" height="1400" />
+    </state>
+    <state x="3449" y="477" width="584" height="532" key="find.popup/0.0.2560.1400/2560.0.2560.1400@2560.0.2560.1400" timestamp="1589345197188" />
     <state x="3397" y="354" key="run.anything.popup" timestamp="1589242606700">
       <screen x="2560" y="0" width="2560" height="1400" />
     </state>
     <state x="3397" y="354" key="run.anything.popup/0.0.2560.1400/2560.0.2560.1400@2560.0.2560.1400" timestamp="1589242606700" />
-    <state x="3537" y="362" width="672" height="678" key="search.everywhere.popup" timestamp="1589178404326">
+    <state x="3537" y="362" width="672" height="678" key="search.everywhere.popup" timestamp="1589345199465">
       <screen x="2560" y="0" width="2560" height="1400" />
     </state>
-    <state x="3537" y="362" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400/2560.0.2560.1400@2560.0.2560.1400" timestamp="1589178404326" />
+    <state x="3537" y="362" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400/2560.0.2560.1400@2560.0.2560.1400" timestamp="1589345199465" />
   </component>
 </project>
