@@ -1,29 +1,3 @@
-// const margin = {
-//     left: 40,
-//     right: 20,
-//     bottom :50,
-//     top: 40
-//   }, height = 500 - margin.top - margin.bottom,
-//   width = 500 - margin.right - margin.left
-//
-// let svg = d3.select('#chart-area')
-//   .append('svg')
-//   .attr('width', width + margin.right + margin.left)
-//   .attr('height', height + margin.top + margin.bottom)
-//
-// let tree = d3.tree()
-//   .size([height, width -160])
-//
-// // let hierarchy = d3.hierarchy()
-// //   .parentId((d) => d.id.substring(0, d.id.lastIndexOf('.')))
-//
-// d3.json('data/tree.json').then(data => {
-//   console.log(data)
-// }).catch(err => {
-//   console.log(err)
-// })
-
-
 
 let svg = d3.select("svg"),
   width = +svg.attr("width"),
@@ -63,13 +37,13 @@ d3.json('data/tree.json').then(data => {
     .attr("height", function(d) { return d.y1 - d.y0; })
     .attr("fill", function(d) { return color(d.parent.data.id); });
 
-  cell.append("clipPath")
-    .attr("id", function(d) { return "clip-" + d.data.id; })
-    .append("use")
-    .attr("xlink:href", function(d) { return "#" + d.data.id; });
+  // cell.append("clipPath")
+  //   .attr("id", function(d) { return "clip-" + d.data.id; })
+  //   .append("use")
+  //   .attr("xlink:href", function(d) { return "#" + d.data.id; });
 
   cell.append("text")
-    .attr("clip-path", function(d) { return "url(#clip-" + d.data.id + ")"; })
+    // .attr("clip-path", function(d) { return "url(#clip-" + d.data.id + ")"; })
     .selectAll("tspan")
     .data(function(d) { return d.data.name.split(/(?=[A-Z][^A-Z])/g).concat(format(d.data.value))})
     .enter().append("tspan")

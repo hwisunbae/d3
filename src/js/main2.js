@@ -1,6 +1,6 @@
 
 let margin = {
-  left:100,
+  left:80,
   right:10,
   top:10,
   bottom:100
@@ -14,11 +14,13 @@ let t = d3.transition().duration(3000)
 let svg = d3.select("#chart-area")
   .append("svg")
   .attr("width", width + margin.left + margin.right)
-  .attr("height", height + margin.top + margin.bottom);
+  .attr("height", height + margin.top + margin.bottom)
+  .call(zoom)
 
 let g = svg.append("g")
   .attr("transform", "translate("+margin.left+ ", "
-  +margin.top + ")");
+  +margin.top + ")")
+  .attr('class', 'bars')
 
 //X Label
 let xLabel = g.append('text')
@@ -30,7 +32,7 @@ let xLabel = g.append('text')
   .text('Month')
 
 let xAxisGroup = g.append("g")
-  .attr("class","x axis")
+  .attr("class","x-axis")
   .attr("transform", "translate(0,"+height+")")
 
 let yAxisGroup = g.append("g")
@@ -55,7 +57,7 @@ let y = d3.scaleLinear()
   .range([height, 0]);
 
 d3.json("data/profits.json").then(data => {
-  // console.log(data)
+  window.data =data;
   data.forEach(d => {
     d.revenue = +d.revenue;
     d.profit = +d.profit;
@@ -63,6 +65,8 @@ d3.json("data/profits.json").then(data => {
 
   update(data);
 })
+
+
 
 function update(data) {
 
@@ -94,13 +98,6 @@ function update(data) {
   let rects = g.selectAll("rect")
     .data(data, d => d.month)
 
-  // rects
-  //   .exit()
-  //   .attr('fill','red')
-  //   .transition(t)
-  //   .attr('y', 0)
-  //   .attr('height', 0)
-  //   .remove()
 
   let bar = rects
     .enter()
@@ -117,5 +114,21 @@ function update(data) {
     .attr('y', d => y(d[value]))
     .attr('height',  d => height - y(d[value]))
 
+}
+
+function zoom(svg) {
+  const extent = [[margin.left, margin.top], [width - margin.right, height - margin.top]];
+
+  svg.call(d3.zoom()
+    .scaleExtent([1, 8])
+    .translateExtent(extent)
+    .extent(extent)
+    .on("zoom", zoomed));
+
+  function zoomed() {
+    x.range([0, width - margin.right].map(d => d3.event.transform.applyX(d)));
+    svg.selectAll(".bars rect").attr("x", d => x(d.month)).attr("width", x.bandwidth());
+    svg.selectAll(".x-axis").call(d3.axisBottom(x));
+  }
 }
 
